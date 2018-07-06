@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 minimum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/index.js"></script>
+    <title>区块链宣传</title>
+</head>
+<body>
+        
+    <header class="header">
+        <h1></h1>
+        <div class="header_right">
+            <a class="header_login" href="#">登录</a>
+            <a class="header_reg" href="#">注册</a>
+        </div>
+
+        <div class="user">
+            <ul>
+                <li><a href="./html/moneyManage.html">财务</a></li>
+                <li><span class="user_pic"></span>名字七个中文字</li>
+                <li class="login"><a href="../html/login.html"></a></li>
+            </ul>
+        </div>
+
+
+
+        <h2><img src="" alt=""></h2>
+        <p>全&nbsp;&nbsp;名&nbsp;&nbsp;参&nbsp;&nbsp;与&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;红&nbsp;&nbsp;利&nbsp;&nbsp;共&nbsp;享&nbsp;</p>
+        <a class="big_reg" href="#">立即注册</a>
+    </header>
+    <section class="con">
+        <div class="con1">
+            <div class="con1_left">
+                <div class="con1_left_img"></div>
+                <p>首次注册即送1000积分可兑换数字币或提现</p>
+            </div>
+            <div class="con1_img">
+            </div>
+            <div class="con1_right">
+            </div>
+        </div>
+        <div class="con2">
+            <div class="con2_left">
+                <div class="con2_left_img"></div>
+                <p>下载手机端浏览资讯可快速获得积分</p>
+            </div>
+            <div class="con2_img">
+            </div>
+            <div class="con2_right">
+            </div>
+        </div>
+        <div class="con3">
+            <div class="con3_left">
+                <div class="con3_left_img"></div>
+                <p>一个多元化的民主自治区块链生态社区</p>
+            </div>
+            <div class="con3_img">
+            </div>
+            <div class="con3_right">
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    </footer>
+    <div class="ejectLogin">
+        <h3>登&nbsp;&nbsp;录<span></span></h3>
+        <p><span>账号</span><input id="user_name" type="text" placeholder="请输入账号"></p>
+        <p><span>密码</span><input id="user_pwd" type="password" placeholder="请输入密码"></p>
+        <a href="#">找回密码</a>
+        <button id="loginSubmit" type="submit">登录</button>
+    </div>
+    <div class="ejectReg">
+        <div class="tab">
+            <ul class="tab_hd">
+                <li data-id="1" class="active tab_register">手机注册</li>
+                <li data-id="0" class="tab_register">邮箱注册</li>
+                <li class="close"></li>
+            </ul>
+            <ul class="tab_bd">
+                <li class="thisclass"><span>手机号</span><span class="error">手机号不正确</span><input id="phone" type="text" placeholder="请输入手机号"></li>
+                <li><span>邮箱号</span><span class="error">邮箱地址不正确</span><input id="email" type="text" placeholder="请输入邮箱地址"></li>
+            </ul>
+            <p><span>登录密码</span><input id="password" type="password" placeholder="请输入密码"></p>
+            <p class="ensurePassword"><span>确认密码</span><span class="error">密码不一致</span><input id="againPassword" type="password" placeholder="请再次输入密码"></p>
+            <p class="yzm"><span>图形验证码</span><input type="text"><img alt="" class="img_code" id="img_captcha" :src="'data:image/png; base64,'+data" data-get-img-code="1"></p>
+            <p class="ty"><input type="checkbox" name="" id="agree"><span>我已阅读并同意</span><a href="#">《区块链公社条约》</a></p>
+            <button id="submit"  type="submit">注册</button>
+        </div>
+    </div>
+    <div class="getyzm">
+            <div class="tab">
+                <ul class="tab_hd2">
+                    <li data-id="1" class="active tab_register">手机注册</li>
+                    <li data-id="0" class="tab_register">邮箱注册</li>
+                    <li class="close"></li>
+                </ul>
+                <ul class="tab_bd2">
+                    <li class="thisclass"><span>已发送验证码至手机号185****1232请填写验证码</span><span class="error">验证码不正确</span><input id="phone" type="text" placeholder="请输入验证码"></li>
+                    <li><span>已发送验证码至邮箱号2991****69@qq.com请填写验证码</span><span class="error">验证码不正确</span><input id="email" type="text" placeholder="请输入验证码"></li>
+                </ul>
+                <button id="getyzm_submit"  type="submit">提交</button>
+            </div>
+    </div>
+    <div class="regSuccess">
+        <span class="regSuccess_close"></span>
+        <span class="regSuccess_score">积分</span>
+        <div class="regSuccess_con">
+            <p>规则：</p>
+            <p>1、区块链积分可兑换数字资产并且提现。</p>
+            <p>2、通过浏览资讯可获得积分。</p>
+            <p>3、区块链公社是集交易所、资讯板块、项目孵化、游戏娱乐、矿场板块、聊天交友等功能为一体的公社制平台。</p>
+            <p>4、平台理论:公平公正、互利多赢。</p>
+        </div>
+        <div class="regSuccess_message">
+            <a href="/html/moneyManage.html">查看账户</a>
+        </div> 
+    </div>
+</body>
+</html>
