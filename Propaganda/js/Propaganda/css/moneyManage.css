@@ -1,0 +1,395 @@
+*{margin: 0; padding: 0; list-style: none;text-decoration: none;font-family: "微软雅黑";}
+.header{
+    width: 100%;
+    background: #49b5fa;
+    height: 70px;
+}
+.header .header_in{
+    width: 1600px;
+    height: 70px;
+    background: #49b5fa;
+    margin: 0 auto;
+}
+.header .header_in  .header_logo{
+    float: left;
+    width: 122px;
+    height: 70px;
+    background: url(../img/btn_header_home.png) 0 0 no-repeat;
+}
+.header .header_in  .header_logo:hover{
+    background: url(../img/btn_header_home.png) -122px 0 no-repeat;
+}
+/* nav */
+.header .header_in  .nav{
+    float: left;
+    margin-left: 30px;
+}
+.header .header_in  .nav li{
+    float: left;
+    height: 70px;
+    line-height: 70px;
+    margin-right: 42px;
+    position: relative;
+    cursor: pointer;
+}
+.header .header_in  .nav li a{
+    font-size: 16px;
+    color: #fff;
+    
+}
+.header .header_in  .nav li span{
+    display: inline-block;
+    width: 12px;
+    height: 8px;
+    background: url("../img/home_header\ _icon_drop.png") center center;
+    margin-left: 12px;
+}
+.header .header_in  .nav li:nth-child(4){
+    position: relative;
+}
+.header .header_in  .nav li:nth-child(4) ul{
+    overflow: hidden;
+    margin-top: 2px;
+    padding-bottom: 5px;
+    background: #49b5fa;
+    width: 100px;
+    position: absolute;
+    left: 0;
+    display: none;
+    z-index: 1;
+}
+.header .header_in  .nav li:nth-child(4) ul li{
+    width: 100px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 14px;
+    padding: 5px 0 5px 4px;
+
+}
+.header .header_in  .nav li:nth-child(5){
+    position: relative;
+}
+.header .header_in  .nav li:nth-child(5) ul{
+    overflow: hidden;
+    padding-bottom: 5px;
+    background: #49b5fa;
+    margin-top: 2px;
+    width: 100px;
+    position: absolute;
+    left: 0;
+    display: none;
+    z-index: 1;
+}
+.header .header_in  .nav li:nth-child(5) ul li{
+    width: 100px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 14px;
+    padding: 5px 0 5px 10px;
+}
+.header .header_in  .nav li:nth-child(7){
+    position: relative;
+}
+.header .header_in  .nav li:nth-child(7) ul{
+    overflow: hidden;
+    margin-top: 2px;
+    padding-bottom: 5px;
+    background: #49b5fa;
+    width: 100px;
+    position: absolute;
+    left: -10px;
+    display: none;
+    z-index: 1;
+}
+.header .header_in  .nav li:nth-child(7) ul li{
+    width: 100px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 14px;
+    padding: 5px 0 5px 13px;
+}
+
+.header .header_in  .user{
+    float: right;
+}
+.header .header_in  .user li{
+    float: left;
+    height: 70px;
+    line-height: 70px;
+    margin-right: 42px;
+    position: relative;
+    cursor: pointer;
+    color: #fff;
+    font-size: 16px;
+    
+}
+.header .header_in  .user li a{
+    color: #fff;
+    font-size: 16px;
+}
+.header .header_in  .user li span{
+    display: inline-block;
+    width: 12px;
+    height: 8px;
+    background: url("../img/home_header\ _icon_drop.png") center center;
+    margin-left: 12px;
+}
+.header .header_in  .user li .user_pic{
+    width: 36px;
+    height: 36px;
+    background: url(../img/user_head.png) no-repeat;
+    border-radius: 18px;
+    position: relative;
+    top: 12px;
+    left: -10px;
+}
+.header .header_in  .user .login a{
+    width: 20px;
+    height: 20px;
+    margin-top: 25px;
+    float: left;
+    background: url(../img/icon_exit.png) no-repeat;
+}
+.header .header_in  .user li:nth-child(3){
+    position: relative;
+}
+.header .header_in  .user li:nth-child(3) .arrow{
+    width: 42px;
+    height: 14px;
+    position: absolute;
+    top: 56px;
+    left: 80px;
+    background: url(../img/icon_box.png) no-repeat;
+    display: none;
+}
+.header .header_in  .user li:nth-child(3) ul{
+    overflow: hidden;
+    background: #fff;
+    width: 150px;
+    position: absolute;
+    left: 40px;
+    border-radius: 5px;
+    border-right: 1px solid #dbdcdf;
+    border-left: 1px solid #dbdcdf;
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+    display: none;
+    z-index: 1;
+
+}
+.header .header_in  .user li:nth-child(3) ul li{
+    width: 150px;
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #dbdcdf;
+    font-size: 14px;
+    text-align: center; 
+}
+.header .header_in  .user li:nth-child(3) ul li a{
+    color:#253745;
+    font-size: 14px;
+}
+.header .header_in  .user li:nth-child(3) ul li a:hover{
+    color:#3f576a;
+}
+
+/* con */
+.con{
+    width: 1200px;
+    height: 1000px;
+    margin: 50px auto;
+}
+.con .con_title{
+    width: 1198px;
+    height: 235px;
+    border: 1px solid #dfe5ea;
+}
+.con .con_title h4{
+    width: 1178px;
+    height: 70px;
+    line-height: 70px;
+    background: #dbdcdf;
+    font-size: 16px;
+    font-weight: normal;
+    padding-left: 20px;
+}
+.con .con_title .con_title_left{
+    width: 600px;
+    height: 165px;
+    float: left;
+    margin-top: 50px;
+    padding-left: 20px;
+}
+.con .con_title .con_title_left p{
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #253745;
+}
+.con .con_title .con_title_left p b{
+    color: #ed4040;
+    font-size: 28px;
+    margin-left: 10px;
+    margin-right: 5px;
+}
+.con .con_title .con_title_left p span{
+    font-size: 14px;
+    color: #999999;
+}
+.con .con_title .con_title_right{
+    width: 320px;
+    height: 165px;
+    line-height: 165px;
+    float: right;
+}
+.con .con_title .con_title_right a{
+    color: #49b5fa;
+}
+.con .con_title .con_title_right a:last-child{
+    margin-left: 115px;
+}
+.con .con_title .con_title_right a:hover{
+    text-decoration: underline;
+}
+
+
+.con .con_score{
+    width: 1198px;
+    height: 235px;
+    border: 1px solid #dfe5ea;
+    margin-top: 20px;
+}
+.con .con_score h4{
+    width: 1178px;
+    height: 70px;
+    line-height: 70px;
+    background: #dbdcdf;
+    font-size: 16px;
+    font-weight: normal;
+    padding-left: 20px;
+}
+.con .con_score h4 span{
+    margin-left: -598px;
+}
+.con .con_score .con_score_left{
+    width: 600px;
+    height: 165px;
+    float: left;
+    margin-top: 50px;
+    padding-left: 20px;
+}
+.con .con_score .con_score_left p{
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #253745;
+}
+.con .con_score .con_score_left p b{
+    color: #ed4040;
+    font-size: 28px;
+    margin-left: 10px;
+    margin-right: 5px;
+}
+.con .con_score .con_score_left p span{
+    font-size: 14px;
+    color: #999999;
+}
+.con .con_score .con_score_right{
+    width: 320px;
+    height: 165px;
+    line-height: 165px;
+    float: right;
+}
+.con .con_score .con_score_right a{
+    float: right;
+    color: #49b5fa;
+    margin-right: 40px;
+}
+
+.con .con_score .con_score_right a:hover{
+    text-decoration: underline;
+}
+
+
+
+.con .asset{
+    float: right;
+    margin-right: 10px;
+    margin-top: 50px;
+    font-size: 14px;
+}
+.con .asset input{
+    position: relative;
+    top: 2px;
+}
+
+.con .price_table{
+    width: 1200px;
+    /* height: 670px; */
+    margin: 80px auto;
+    border-collapse: collapse;
+}
+.con .price_table thead tr{
+    border: 1px solid #dfe5ea; 
+
+}
+.con .price_table th{
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    color: #adb3bc;
+    font-weight: normal;
+}
+ .con .price_table th span{
+    display: inline-block;
+    width: 12px;
+    height: 16px;
+    background: url("../img/btn_sort.png") 0px 0px no-repeat ;
+    position: relative;
+    left: 5px;
+    top: 3px;
+    cursor: pointer;
+} 
+/* .con .con_price .price_table th:first-child{
+    position: absolute;
+    left: 114px; 
+} */
+
+.con .price_table td{
+    text-align: center;
+    height: 49x;
+    line-height: 49px;
+    color: #adb3bc;
+    font-size: 14px;
+    position: relative;
+}
+.con .price_table td .price_logo{
+    position: absolute;
+    left: 90px;
+    top: 13px;
+    width: 24px;
+    height: 24px;
+    background: #dfe5ea;
+    border-radius: 24px;
+}
+.con .price_table td .en{
+    color: #253745;
+    font-weight: bold;
+    padding-left: 20px;
+}
+.con .price_table td .ch{
+    padding-left: 5px;
+    color:#adb3bc;
+}
+.con .price_table td:nth-child(2) span,.con .price_table td:nth-child(3) span{
+    color: #ed4040;
+}
+.con .price_table .cz a{
+    color:  #ed4040;
+    font-size: 14px;
+}
+.con .price_table .cz a:nth-child(2),.con .price_table .cz a:nth-child(3){
+    color: #49b5fa;
+    margin-left: 30px;
+}
+.con .price_table .cz a:hover{
+    text-decoration: underline;
+}

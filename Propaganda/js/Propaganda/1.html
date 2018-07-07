@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{list-style: none;}
+    .con_in_reg{
+    width: 568px;
+    height: 580px;
+    border: 1px solid #dfe5ea;
+    text-align: center;
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+}
+ .con_in_reg{
+    width: 568px;
+    height: 580px;
+    border: 1px solid #dfe5ea;
+    text-align: center;
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+}
+ .con_in_reg .tab_hd { 
+    background:#fff; 
+    overflow:hidden; 
+    zoom:1;
+}
+.con_in_reg .tab_hd li{ 
+    float:left; 
+    width:230px; 
+    height: 50px;
+    line-height: 50px;
+    color:#253745; 
+    border-bottom: 1px solid #dfe5ea;
+    border-left: 1px solid #dfe5ea;
+    text-align:center; 
+    cursor:pointer;
+    font-size: 14px;
+}
+.con_in_reg .tab_hd li:first-child{
+    border-left: 0;
+    
+}
+.con_in_reg .tab_hd li.active{ 
+    background:#fff;
+    border-bottom: 0;
+}
+.con_in_reg .tab_bd{
+    width: 532px;
+    padding-left: 36px;
+    padding-top: 20px;
+    /* box-shadow: 0 0 3px 3px; */
+}
+.con_in_reg .tab_bd li{
+    display:none; 
+    font-size:14px;
+}
+.con_in_reg .tab_bd li.thisclass{
+    display:list-item;
+}
+.con_in_reg p{
+    width: 532px;
+    height: 50px;
+    padding-left: 36px;
+}
+.con_in_reg span{
+    color: #253745;
+    font-size: 14px;
+    float: left;
+    margin-right: 50px;
+    margin-bottom: 12px;
+    margin-top: 12px;
+
+}
+.con_in_reg input{
+    float: left;
+    width: 488px;
+    height: 48px;
+    padding-left: 10px;
+    border: 1px solid #dfe5ea;
+    background: #fff;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #253745;
+    outline: none;
+    
+}
+.con_in_reg input::-webkit-input-placeholder{
+    color: #adb3bc;
+}
+.con_in_reg .error{
+    color: red;
+    margin-left: 10px;
+    display: none;
+}
+.con_in_reg input:focus{
+    border-color: #5dc0ff;
+}
+.con_in_reg .yzm span{
+    margin-right: 300px;
+}
+.con_in_reg .yzm input{
+    float: left;
+    width: 350px;
+    margin-right: 10px;
+}
+.con_in_reg .yzm img{
+    float: left;
+    width: 130px;
+    height: 50px;
+    margin-right: 30px;
+    border-radius: 6px;
+    background: #ccc;
+}
+.con_in_reg .ty input{
+    float: left;
+    width: 12px;
+    height: 12px;
+    margin-top: 20px;   
+}
+.con_in_reg .ty span{
+    float: left;
+    margin-top: 15px;
+    margin-left: 10px;
+    margin-right: 0;
+}
+.con_in_reg .ty a{
+    float: left;
+    color: #49b5fa;
+    margin-top: 15px;
+    font-size: 14px;
+}
+.con_in_reg button{
+    float: left;
+    width: 500px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    color: #fff;
+    background: #49b5fa;
+    border: 0;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    outline: none;
+    margin-left: 36px;
+    margin-top: 8px;
+}
+.con_in_reg button:hover{
+    background: #5abefd;
+}
+    </style>
+</head>
+<body>
+        <div class="con_in_reg">
+                <div class="tab">
+                    <ul class="tab_hd">
+                        <li class="active">手机注册</li>
+                        <li>邮箱注册</li>
+                    </ul>
+                    <ul class="tab_bd">
+                        <li class="thisclass"><span>手机号</span><span class="error">手机号不正确</span><input id="phone" type="text" placeholder="请输入手机号"></li>
+                        <li><span>邮箱号</span><input id="email" type="text" placeholder="请输入邮箱地址"></li>
+                    </ul>
+                    <p><span>登录密码</span><input id="password" type="password" placeholder="请输入密码"></p>
+                    <p class="ensurePassword"><span>确认密码</span><span class="error">密码不一致</span><input id="againPassword" type="password" placeholder="请再次输入密码"></p>
+                    <p class="yzm"><span>图形验证码</span><input type="text"><img src="" alt=""></p>
+                    <p class="ty"><input type="checkbox" name="" id=""><span>我已阅读并同意</span><a href="#">《区块链公社条约》</a></p>
+                    <button  type="submit">注册</button>
+                </div>
+            </div>
+</body>
+</html>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script>
+  $(function () {
+    function tabs(tabTit,on,tabCon){
+        $(tabTit).children().click(function(){
+            $(this).addClass(on).siblings().removeClass(on);
+            var index = $(tabTit).children().index(this);
+           	$(tabCon).children().eq(index).show().siblings().hide();
+        });
+    };
+    tabs(".tab_hd","active",".tab_bd");
+    // 验证手机号
+      var phonePass = false,
+          passwordPass = false,
+          yzmPass = false;
+     $('#phone').on('blur',function () {
+        var phone = $('#phone').val();
+        if(phone.length != 11){
+          $('#phone').css('border','1px solid red');
+          $('.thisclass .error').show();
+          phonePass = false;
+          return ;
+        }else{
+          $('#phone').css('border','1px solid #5dc0ff');
+          $('.thisclass .error').hide();
+          phonePass = true
+      }
+    });
+     // 验证密码
+     $('#password,#againPassword').on('blur',function () {
+       var password = $('#password').val();
+       var againPassword = $('#againPassword').val();
+       if(password.length < 6 || password.length > 16 || password != againPassword){
+          $('#againPassword').css('border','1px solid red');
+          $('.ensurePassword .error').show();
+          passwordPass = false;
+          return ;
+       }else{
+          $('#againPassword').css('border','1px solid #5dc0ff');
+          $('.ensurePassword .error').hide();
+          passwordPass = true;
+       }
+       
+     });
+     // 验证码
+      $('#yzm').on('blur',function () {
+       var yzm = $('#yzm').val();
+       if(!yzm.trim()){
+          $('#yzm').css('border','1px solid red');
+          yzmPass = false;
+          return ;
+       }else{
+          $('#yzm').css('border','1px solid #5dc0ff');
+          yzmPass = true
+       }
+     });
+    // 提交
+    $('#agree').on('click',function () {
+        // this.attr('checked');
+    });
+
+    $('#submit').on('click',function () {
+      console.log($("#agree").is(':checked'))
+      
+
+      if(phonePass && passwordPass && yzmPass ){
+        
+          if(!$("#agree").is(':checked')){
+            alert('请勾选条约！')
+            return;
+          }else{
+            alert('通过！')
+
+              /*在这里调验证码的接口*/
+
+          }
+      }else{
+        alert('请确认填写信息是否正确');
+        return;
+      }
+      
+    });
+  ///////////////////////////////
+
+
+
+    "code" : { "type": "string", "desc": "验证码" , "is_require": true } , 
+    "area_code" : { "type": "string" , "desc": "手机号码区号", "is_require": false },
+    "type" : { "type": "number", "desc": "0 ， email 注册方式。 1 手机注册方式", "is_require": true },
+    "country_code" : { "type": "string", "desc": "国家代码。例如 : CN " , "is_require": true }, 
+    "cell_phone_num": { "type": "string", "desc": "手机号码包含国家区号" , "is_require": false } , 
+    "email" : { "type": "string", "desc": "邮箱" , "is_require": false } , 
+    "pwd" : { "type": "string", "desc": "密码" , "is_require": true } , 
+    "pwd2" 
+  });
+</script>

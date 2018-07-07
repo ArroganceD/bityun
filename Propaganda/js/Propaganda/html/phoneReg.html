@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/phoneReg.css">
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script src="../js/phoneReg.js"></script>
+    <title></title>
+</head>
+<body>
+    <section class="con">
+            <div class="con_reg">
+                <div class="tab">
+                    <ul class="tab_hd">
+                        <li class="active">手机注册</li>
+                        <li>邮箱注册</li>
+                    </ul>
+                    <ul class="tab_bd">
+                        <li class="thisclass"><span>手机号</span><span class="error">手机号不正确</span><input id="phone" type="text" placeholder="请输入手机号"></li>
+                        <li class="ensureEmail"><span>邮箱号</span><span class="error">邮箱地址不正确</span><input id="email" type="text" placeholder="请输入邮箱地址"></li>
+                    </ul>
+                    <p><span>登录密码</span><input id="password" type="password" placeholder="请输入密码"></p>
+                    <p class="ensurePassword"><span>确认密码</span><span class="error">密码不一致</span><input id="againPassword" type="password" placeholder="请再次输入密码"></p>
+                    <p class="yzm"><span>图形验证码</span><input type="text"><img src="" alt=""></p>
+                    <p class="ty"><input type="checkbox" name="" id="agree"><span>我已阅读并同意</span><a href="#">《区块链公社条约》</a></p>
+                    <button id="submit" type="submit">注册</button>
+                </div>
+            </div>
+            <div class="con_login">
+                <p>已有有公社账号？<a href="phoneLogin.html">立即登录</a></p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

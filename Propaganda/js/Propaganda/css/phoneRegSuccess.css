@@ -1,0 +1,40 @@
+*{margin: 0; padding: 0; list-style: none;text-decoration: none;font-family: "微软雅黑";}
+.regSuccess{
+    width: 100%;
+    height: 800px;
+    background: url(../img/success_bg.jpg) no-repeat;
+    background-size: 100% 100%;
+    padding-top: 12px;
+}
+.regSuccess .regSuccess_user{
+    margin-left: 12px;
+    color:#6268a4;
+    font-size: 14px;
+}
+.regSuccess .regSuccess_con{
+    width: 60%;
+    height: 117px;
+    margin-top: 360px;
+    margin-left: 90px;
+    font-size: 14px;
+
+    color: #6268a4;
+}
+.regSuccess .regSuccess_message{
+    width: 172px;
+    height: 60px;
+    background: url(../img/success_btn.jpg.png) 0 0 no-repeat;
+    margin: 90px;
+    margin-left: 120px;
+    line-height: 60px;
+    text-align: center;
+    cursor: pointer;
+}
+.regSuccess .regSuccess_message:hover{
+    background: url(../img/success_btn.jpg.png) -172px 0 no-repeat;
+
+}
+.regSuccess .regSuccess_message a{
+    color: #faebf3;
+    font-size: 16px;
+}

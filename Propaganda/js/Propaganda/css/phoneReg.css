@@ -1,0 +1,173 @@
+*{margin: 0; padding: 0; list-style: none;text-decoration: none;font-family: "微软雅黑";}
+.con{
+    width: 100%;
+    height: 700px;
+    margin: 0 auto;
+    background-image: url(../img/h5-pic2.jpg);
+    background-position: center;
+    background-size: cover;
+    padding-top: 40px;
+    overflow: hidden;
+}
+.con_reg{
+    width: 80%;
+    height: 580px;
+    border: 1px solid rgba(223, 229, 234, 0.3);
+    text-align: center;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 6px;
+    margin: 0 auto;
+}
+.con_reg .tab_hd {
+    width: 100%;
+    overflow:hidden; 
+    zoom:1;
+}
+.con_reg .tab_hd li{ 
+    float:left; 
+    width:50%; 
+    height: 50px;
+    line-height: 50px;
+    box-sizing: border-box;
+    color:#c1c1c1; 
+    border-bottom: 1px solid rgba(223, 229, 234, 0.3);
+    border-left: 1px solid rgba(223, 229, 234, 0.3);
+    text-align:center; 
+    cursor:pointer;
+    font-size: 14px;
+}
+.con_reg .tab_hd li:first-child{
+    border-left: 0;
+    
+}
+.con_reg .tab_hd li.active{ 
+    border-bottom: 0;
+    color: #fff;
+}
+.con_reg .tab_bd{
+    width: 80%;
+    padding-left: 25px;
+    padding-top: 20px;
+    /* box-shadow: 0 0 3px 3px; */
+}
+.con_reg .tab_bd li{
+    display:none; 
+    font-size:14px;
+}
+.con_reg .tab_bd li.thisclass{
+    display:list-item;
+}
+.con_reg p{
+    width: 80%;
+    height: 50px;
+    padding-left: 25px;
+}
+.con_reg span{
+    color: #c1c1c1;
+    font-size: 14px;
+    float: left;
+    margin-right: 50px;
+    margin-bottom: 12px;
+    margin-top: 12px;
+
+}
+.con_reg input{
+    float: left;
+    width: 100%;
+    height: 48px;
+    padding-left: 10px;
+    border: 1px solid rgba(223, 229, 234, 0.3);
+    background: #fff;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #253745;
+    outline: none;
+    
+}
+.con_reg input::-webkit-input-placeholder{
+    color: #adb3bc;
+}
+.con_reg .error{
+    color: red;
+    margin-left: 10px;
+    display: none;
+}
+.con_reg input:focus{
+    border-color: #5dc0ff;
+}
+.con_reg .yzm span{
+    margin-right: 180px;
+}
+.con_reg .yzm{
+    width: 84%;
+}
+.con_reg .yzm input{
+    float: left;
+    width: 60%;
+    margin-right: 10px;
+    padding-left: 10px;
+}
+.con_reg .yzm img{
+    float: right;
+    width: 30%;
+    height: 50px;
+    border-radius: 6px;
+    background: #ccc;
+}
+.con_reg .ty{
+    width: 85%;
+}
+.con_reg .ty input{
+    float: left;
+    width: 12px;
+    height: 12px;
+    margin-top: 20px;   
+}
+.con_reg .ty span{
+    float: left;
+    margin-top: 15px;
+    margin-left: 10px;
+    margin-right: 0;
+    color: #c1c1c1;
+}
+.con_reg .ty a{
+    float: left;
+    color: #49b5fa;
+    margin-top: 15px;
+    font-size: 14px;
+}
+.con_reg button{
+    float: left;
+    width: 85%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    color: #fff;
+    background: #49b5fa;
+    border: 0;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    outline: none;
+    margin-left: 25px;
+    margin-top: 8px;
+}
+.con_reg button:hover{
+    background: #5abefd;
+}
+.con_login{
+    width: 80%;
+    height: 60px;
+    line-height: 60px;
+    margin: 30px auto;
+    text-align: center;
+    font-size: 14px;
+    color: #c1c1c1;
+    border: 1px solid rgba(223, 229, 234, 0.3);
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 6px;
+}
+.con_login a{
+    font-size: 14px;
+    color: #49b5fa;
+}
