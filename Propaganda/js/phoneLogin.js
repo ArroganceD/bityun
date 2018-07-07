@@ -19,6 +19,7 @@ $(function () {
                 },function (response) {
                 console.log(response);
                 if(response.code==1){
+                    $.cookie("username",phone,"path/")
                     location.href = "../html/phoneMoneyManage.html"
                 }else{
                     alert("账号或密码错误");

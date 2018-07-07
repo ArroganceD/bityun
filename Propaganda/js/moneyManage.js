@@ -15,7 +15,6 @@ $(function () {
         $(this).find('span').css({"background":"url('../img/home_header\ _icon_drop.png') center center"})
     });
     $('.user li:nth-child(3)').hover(function () {
-        console.log(1);
         $(this).find('ul').show();
         $(this).find('.arrow').show();
         $(this).find('.arrow_up').css({"background":"url('../img/home_header\ _icon_up.png') center center"})
@@ -24,10 +23,9 @@ $(function () {
         $(this).find('.arrow').hide();
         $(this).find('.arrow_up').css({"background":"url('../img/home_header\ _icon_drop.png') center center"})
     });
-
-
-
-
-
+    console.log($.cookie('username'));
+    
+    var user_name = getCookie('username');
+    $('.user li').eq(2).html(user_name);
 
 })

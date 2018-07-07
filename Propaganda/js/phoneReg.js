@@ -16,8 +16,7 @@ $(function () {
 	};
     tabs(".tab_hd","active",".tab_bd");
     
-    var phone,email,password,againPassword,yzm
-    ;
+    var phone,email,password,againPassword,yzm;
     var phonePass = false,passwordPass = false,yzmPass = false;
     $('#phone').on('blur',function () {
          phone = $('#phone').val();
@@ -35,16 +34,12 @@ $(function () {
     });
     $('#email').on('blur',function () {
         email = $('#email').val();
-    //     if(email.length != 11){
-    //     $('#email').css('border','1px solid red');
-    //     $('.thisclass .error').show();
-    //     emailPass = false;
-    //     return ;
-    // }else{
-    //     $('#email').css('border','1px solid #dfe5ea');
-    //     $('.thisclass .error').hide();
-    //     emailPass = true
-    // }
+        var reg = /^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z0-9]{2,6}$/;
+        if (email == '') {
+            $('.ensureEmail .error').show();
+        }else if (!reg.exec(email)) {
+            $('.ensureEmail .error').show();
+        }
     });
     // // 验证密码
     $('#againPassword').on('blur',function () {
@@ -63,17 +58,32 @@ $(function () {
 
     });
     // 验证码
-    $('#yzm').on('blur',function () {
-        yzm = $('#yzm').val();
-        if(!yzm.trim()){
-            $('#yzm').css('border','1px solid red');
-            yzmPass = false;
-            return ;
-        }else{
-            $('#yzm').css('border','1px solid #dfe5ea');
-            yzmPass = true
-        }
-    });
+    $.get("http://192.168.1.18:12007/common/verify_code",
+        
+            {
+                "rand_code":"94632",
+                "lang":"zh-cn",
+                "verify_type":"getVerifyCode",
+                "t":"1530776541533"
+            },
+            function (data, status) {
+                $('#img_captcha').attr('src','data:image/png; base64,'+data+'')
+                $('#img_captcha').on('click',function () {
+                    $.get("http://192.168.1.18:12007/common/verify_code",
+        
+                    {
+                        "rand_code":"94632",
+                        "lang":"zh-cn",
+                        "verify_type":"getVerifyCode",
+                        "t":"1530776541533"
+                    },
+                    function (data, status) {
+                        $('#img_captcha').attr('src','data:image/png; base64,'+data+'')
+                    })
+                })
+            },
+    );
+    
     // 提交
     $('#agree').on('click',function () {
     // this.attr('checked');
@@ -81,11 +91,12 @@ $(function () {
     
     //注册
     $('#submit').on('click',function () {
-        console.log(1);
-        
+        if (!$('#agree').is(':checked')) {
+            alert("请勾选协议!")
+        }else{
+    
         //    console.log($("#agree").is(':checked'))
         // console.log(before_invitation_code);
-        console.log(type);
                 //发请求
                 //response
                 if(type==0){
@@ -111,8 +122,8 @@ $(function () {
                             alert("注册失败");
                         }
     
-                    }
-                );  
+                        }
+                    );  
                 }else if(type==1){
                     var data = {
                         "code":"1111",
@@ -131,8 +142,8 @@ $(function () {
                     $.post("http://192.168.1.18:12007/account/register",data,function (data, status) {
                         console.log(data);
                         if(data.code==1){
-                            // alert("注册成功");
-                            location.href = "./phoneRegSuccess.html"
+                            alert("注册成功");
+                            location.href = "../phoneRegSuccess.html"
 
                         }else{
                             alert("注册失败");
@@ -141,6 +152,7 @@ $(function () {
                     }
                 );
                 }
+            }
     })
     
 

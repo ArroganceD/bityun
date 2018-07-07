@@ -716,7 +716,7 @@
         background: url(../img/h5-logo.png) no-repeat;
     }
     .header .header_right{
-        width: 35%;
+        width: 37%;
         height: 40px;
         float: right;
         margin-top: 24px;
@@ -730,7 +730,7 @@
         background: #6c727a;
         color: #fff;
         border-radius: 6px;
-        margin-right: 10px;
+        margin-right: 4%;
         font-size: 16px;
         text-align: center;
     }
@@ -922,6 +922,57 @@
         margin: 0 auto;
         background-size: 100%;
     }
+    
+    .header .user{
+        float: right;
+        display: none;
+    }
+    .header .user li{
+        float: left;
+        height: 70px;
+        line-height: 70px;
+        margin-right: 5%;
+        position: relative;
+        cursor: pointer;
+        color: #fff;
+        font-size: 16px;
+        
+    }
+    .header .user li a{
+        color: #fff;
+        font-size: 16px;
+    }
+    .header .user li span{
+        display: inline-block;
+        width: 12px;
+        height: 8px;
+        background: url("../img/home_header\ _icon_drop.png") center center;
+        margin-left: 2%;
+        display: none;
+    }
+    .header .user li .user_pic{
+        width: 5%;
+        height: 36px;
+        background: url(../img/user_head.png) no-repeat;
+        background-size: cover;
+        border-radius: 18px;
+        position: relative;
+        top: 12px;
+        left: -10px;
+        display: none;
+    }
+    .header .user .login a{
+        width: 20px;
+        height: 20px;
+        margin-top: 25px;
+        float: left;
+        background: url(../img/icon_exit.png) no-repeat;
+        display: none;
+    }
+   
+
+
+
     .ejectLogin{
         display: none;
     }
