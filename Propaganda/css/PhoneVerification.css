@@ -46,7 +46,7 @@
 }
 .con_reg .tab_bd{
     width: 80%;
-    padding-left: 43px;
+    padding-left: 40px;
     padding-top: 20px;
     /* box-shadow: 0 0 3px 3px; */
 }
@@ -108,7 +108,7 @@
     font-size: 14px;
     cursor: pointer;
     outline: none;
-    margin-left: 43px;
+    margin-left: 40px;
     margin-top: 30px;
 }
 .con_reg button:hover{

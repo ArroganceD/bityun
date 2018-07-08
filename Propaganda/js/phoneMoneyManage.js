@@ -1,17 +1,18 @@
-// $(function () {
-//     $.post("http://192.168.1.18:12007/account/login", 
-//         {
-//             "client_id": "",
-//             "email_or_phone": user_name,
-//             "pwd": password,
-//             "rand": "CN",
-//             "verify_code": ""
-//         },
-//         function (response) {
-//             if(response.code == 1){
-//                 $('.user_name').html(user_name);
-//             }
-//         },
-//         "dataType"
-//     );
-// })
+
+$(function () {
+    function GetQueryString(name){
+        var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);     
+        if(r!=null)return  unescape(r[2]); return null;
+    }
+    var user_name;
+    if (GetQueryString("user_name")) {
+        user_name = GetQueryString("user_name");
+    }else if ( GetQueryString("user_name")) {
+        user_name = GetQueryString("user_name")
+    }
+    console.log(user_name);
+    
+    $('.user_name').html(user_name);
+
+})

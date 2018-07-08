@@ -1,4 +1,5 @@
 $(function () {
+    var url ="http://180.188.197.24";
     function GetQueryString(name){     var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");     var r = window.location.search.substr(1).match(reg);     if(r!=null)return  unescape(r[2]); return null;} 
     var before_invitation_code =  GetQueryString("before_invitation_code");
     var type = 1; 
@@ -57,22 +58,31 @@ $(function () {
         }
 
     });
+    var charactors="ab1cd2ef3gh4ij5kl6mn7opq8rst9uvw0xyz";
+    var value='',i;
+    for(j=1;j<=4;j++){
+	i = parseInt(35*Math.random()); 　
+	value = value + charactors.charAt(i);
+    }
     // 验证码
-    $.get("http://192.168.1.18:12007/common/verify_code",
+    $('#yzm').on('blur',function () {
+        yzm = $('#yzm').val();
+    });
+    $.get(url+"/common/verify_code",
         
             {
-                "rand_code":"94632",
+                "rand_code":value,
                 "lang":"zh-cn",
                 "verify_type":"getVerifyCode",
                 "t":"1530776541533"
             },
             function (data, status) {
                 $('#img_captcha').attr('src','data:image/png; base64,'+data+'')
+                
                 $('#img_captcha').on('click',function () {
-                    $.get("http://192.168.1.18:12007/common/verify_code",
-        
+                    $.get(url+"/common/verify_code",
                     {
-                        "rand_code":"94632",
+                        "rand_code":value,
                         "lang":"zh-cn",
                         "verify_type":"getVerifyCode",
                         "t":"1530776541533"
@@ -83,13 +93,20 @@ $(function () {
                 })
             },
     );
+    //
     
     // 提交
     $('#agree').on('click',function () {
     // this.attr('checked');
     });
     
-    //注册
+    //判断验证码
+    
+
+
+
+
+    
     $('#submit').on('click',function () {
         if (!$('#agree').is(':checked')) {
             alert("请勾选协议!")
@@ -100,57 +117,74 @@ $(function () {
                 //发请求
                 //response
                 if(type==0){
-                    $.post("http://192.168.1.18:12007/account/register",{
-                        "code":"1111",
-                        "area_code":"",
-                        "type" :type,
-                        "country_code":"CN",
-                        "cell_phone_num":"",
-                        "pwd" :password,
-                        "pwd2":againPassword,
-                        "verify_code":"",
-                        "email":email,
-                        "before_invitation_code":before_invitation_code
-                    },function (data, status) {
-                        console.log(data);
-                        if(data.code==1){
-                            // alert("注册成功");
-                            location.href = "./phoneRegSuccess.html"
-
-                            // $('.getyzm').show(); 
-                        }else{
-                            alert("注册失败");
-                        }
-    
-                        }
-                    );  
+                    $.post(url+"/common/send_email_verify_code", 
+                    
+                            {
+                                "rand":value,
+                                "verify_code":yzm,
+                                "email":email,
+                                "lang":"zh-cn",
+                                "cliend-id":""
+                            },
+                        function (data,status) {
+                            console.log(1);
+                            console.log(data);
+                            if (data.code ==1) {
+                                console.log(password);
+                                location.href = "../html/phoneVerification.html?rand="+value+"&verify_code="+yzm+"&email="+email+"&lang=zh-cn&cliend-id=&password="+password+"&againPassword="+againPassword+"&verify_code="+yzm+"&type="+type;
+                                // $.cookie('email',email,'path=/');
+                            }else{
+                                alert('注册失败');
+                            }
+                        },
+                    );
+                    
                 }else if(type==1){
-                    var data = {
-                        "code":"1111",
-                        "area_code":"86",
-                        "type" :type,
-                        "country_code":"CN",
-                        "cell_phone_num":phone,
-                        "pwd" :password,
-                        "pwd2":againPassword,
-                        "verify_code":"",
-                        "email":"",
-                        "before_invitation_code":before_invitation_code
-                    };
-                    console.log("data:");
-                    console.info(data);
-                    $.post("http://192.168.1.18:12007/account/register",data,function (data, status) {
-                        console.log(data);
-                        if(data.code==1){
-                            alert("注册成功");
-                            location.href = "../phoneRegSuccess.html"
+                    $.post(url+"/common/send_sms_verify_code", 
+                            {
+                                "rand":value,
+                                "verify_code":yzm,
+                                "area_code":"",
+                                "cell_phone":phone,
+                                "lang":"zh-cn",
+                                "cliend-id":""
+                            },
+                        function (data,status) {
+                            
+                            if (data.code ==1) {
+                                location.href = "../html/phoneVerification.html?rand="+value+"&verify_code="+yzm+"&phone="+phone+"&lang=zh-cn&cliend-id=&password="+password+"&againPassword="+againPassword+"&verify_code="+yzm;
+                            }else{
+                                console.log(1);
+                                alert('注册失败');
+                            }
+                        },
+                    );
+                //     var data = {
+                //         "code":"1111",
+                //         "area_code":"86",
+                //         "type" :type,
+                //         "country_code":"CN",
+                //         "cell_phone_num":phone,
+                //         "pwd" :password,
+                //         "pwd2":againPassword,
+                //         "verify_code":"",
+                //         "email":"",
+                //         "before_invitation_code":before_invitation_code
+                //     };
+                //     console.log("data:");
+                //     console.info(data);
+                //     $.post(url+"/account/register",data,function (data, status) {
+                //         console.log(data);
+                //         if(data.code==1){
+                //             alert("注册成功");
+                //             location.href = "../phoneRegSuccess.html"
 
-                        }else{
-                            alert("注册失败");
-                        }
+                //         }else{
+                //             alert("注册失败");
+                //         }
     
-                    }
-                );
+                //     }
+                // );
                 }
             }
     })

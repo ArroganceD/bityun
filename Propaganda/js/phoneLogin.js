@@ -1,6 +1,7 @@
 $(function () {
-    //登录
     
+    //登录
+    var url ="http://180.188.197.24"
     $('#loginSubmit').click(function(){
         if ($('#user_name').val() != '') {
           var phone = $('#user_name').val();
@@ -9,7 +10,7 @@ $(function () {
             var password = $('#user_pwd').val();
         }
         
-        $.post("http://192.168.1.18:12007/account/login",
+        $.post(url+"/account/login",
                 {
                     "client_id": "",
                     "email_or_phone": phone,

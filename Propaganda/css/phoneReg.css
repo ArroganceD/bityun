@@ -96,7 +96,7 @@
     border-color: #5dc0ff;
 }
 .con_reg .yzm span{
-    margin-right: 180px;
+    margin-right: 140px;
 }
 .con_reg .yzm{
     width: 84%;
@@ -104,7 +104,7 @@
 .con_reg .yzm input{
     float: left;
     width: 60%;
-    margin-right: 10px;
+    margin-right: 1%;
     padding-left: 10px;
 }
 .con_reg .yzm img{
@@ -119,22 +119,25 @@
 }
 .con_reg .ty input{
     float: left;
-    width: 12px;
-    height: 12px;
+    width: 14px;
+    height: 14px;
     margin-top: 20px;   
+    position: relative;
+    top: -3px;
 }
 .con_reg .ty span{
     float: left;
     margin-top: 15px;
-    margin-left: 10px;
+    margin-left: 6px;
     margin-right: 0;
     color: #c1c1c1;
+    font-size: 12px;
 }
 .con_reg .ty a{
     float: left;
     color: #49b5fa;
     margin-top: 15px;
-    font-size: 14px;
+    font-size: 12px;
 }
 .con_reg button{
     float: left;
